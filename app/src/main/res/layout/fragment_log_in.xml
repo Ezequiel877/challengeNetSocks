@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    xmlns:frisson="http://schemas.android.com/apk/res-auto"
+    tools:context=".UI.LogInFragment">
+
+    <com.intrusoft.library.FrissonView
+        android:id="@+id/wave_head"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        frisson:alphaValue="50"
+        frisson:tintColor="#FA382A"
+        frisson:gradientType="radial"
+        frisson:gradient_endColor="#CCEA6161"
+        frisson:gradient_startColor="#00000000"
+        frisson:tideCount="3"
+        frisson:tideHeight="40dp"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:theme="@style/Theme.MaterialComponents.Light">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/InPutText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="email o Nro-celular"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:hint="contrseña">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/InPutTextAdress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/buttonIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="ingresar" />
+
+            <TextView
+                android:id="@+id/singUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="No tiene una cuenta? Registrese" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <ProgressBar
+        android:id="@+id/progresRigt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
