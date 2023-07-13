@@ -11,13 +11,13 @@ import com.example.challengenetsocks.R
 import com.example.challengenetsocks.databinding.FragmentLogInBinding
 import com.example.challengenetsocks.domian.SingInImp
 import com.example.challengenetsocks.domian.UserDataSource
-import com.example.kampasmobil2.model.AuthFactory
-import com.example.kampasmobil2.model.ModelRegistro
+import com.example.challengenetsocks.model.AuthFactory
+import com.example.challengenetsocks.model.ModelUserViewModel
 
 
 class LogInFragment : Fragment(R.layout.fragment_log_in) {
     private lateinit var binding:FragmentLogInBinding
-    private val viewModel by viewModels<ModelRegistro> {
+    private val viewModel by viewModels<ModelUserViewModel> {
         AuthFactory(SingInImp(UserDataSource()))
     }
     private val firebaseAuth by lazy { com.google.firebase.auth.FirebaseAuth.getInstance() }
@@ -40,7 +40,7 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
             val email = binding.InPutText.text.toString().trim()
             val password = binding.InPutTextAdress.text.toString().trim()
             reliaceEmail_Passwork(email, password)
-            reliaceRegistro(email, password)
+            logIn(email, password)
         }
 
     }
@@ -63,7 +63,7 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
         }
     }
 
-    private fun reliaceRegistro(email: String, password: String) {
+    private fun logIn(email: String, password: String) {
         viewModel.singIn(email, password).observe(viewLifecycleOwner, Observer { result->
             when(result){
                 is Result.Loading ->{
