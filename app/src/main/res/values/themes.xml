@@ -6,4 +6,12 @@
     </style>
 
     <style name="Theme.ChallengeNetsocks" parent="Base.Theme.ChallengeNetsocks" />
+
+    <style name="TextInputLayoutRoundedEdges" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">30dp</item>
+        <item name="boxCornerRadiusTopEnd">30dp</item>
+        <item name="boxCornerRadiusBottomStart">30dp</item>
+        <item name="boxCornerRadiusBottomEnd">30dp</item>
+    </style>
+
 </resources>

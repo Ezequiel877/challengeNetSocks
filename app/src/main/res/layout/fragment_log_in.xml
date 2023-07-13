@@ -1,46 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:frisson="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    xmlns:frisson="http://schemas.android.com/apk/res-auto"
     tools:context=".UI.LogInFragment">
 
     <com.intrusoft.library.FrissonView
         android:id="@+id/wave_head"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="200dp"
         frisson:alphaValue="50"
-        frisson:tintColor="#FA382A"
         frisson:gradientType="radial"
-        frisson:gradient_endColor="#CCEA6161"
-        frisson:gradient_startColor="#00000000"
+        android:background="@drawable/gradiente"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toTopOf="parent"
         frisson:tideCount="3"
         frisson:tideHeight="40dp"
-        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:tintColor="#FA382A" />
+
+    <TextView
+        android:id="@+id/hi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Hello"
+        android:textAlignment="textStart"
+        android:textSize="70dp"
+        android:textStyle="bold"
+        frisson:layout_constraintTop_toBottomOf="@id/wave_head" />
+
+    <TextView
+        android:id="@+id/desciption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text=" Registrese"
+        android:textAlignment="textStart"
+        android:textSize="30dp"
         frisson:layout_constraintEnd_toEndOf="parent"
-        frisson:layout_constraintTop_toTopOf="parent"/>
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toBottomOf="@id/hi" />
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        frisson:layout_constraintBottom_toTopOf="@+id/buttonIn"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toBottomOf="@+id/desciption">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="16dp"
-            android:layout_gravity="center"
-            android:theme="@style/Theme.MaterialComponents.Light">
+            android:theme="@style/TextInputLayoutRoundedEdges">
 
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:theme="@style/TextInputLayoutRoundedEdges">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/InPutText"
@@ -57,7 +85,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
-                android:hint="contrseña">
+                android:hint="contrseña"
+                android:theme="@style/TextInputLayoutRoundedEdges">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/InPutTextAdress"
@@ -67,24 +96,66 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/buttonIn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="ingresar" />
-
-            <TextView
-                android:id="@+id/singUp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="No tiene una cuenta? Registrese" />
 
         </LinearLayout>
 
 
     </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/forget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:paddingBottom="40dp"
+        android:text="Forgot your Passwod? "
+        android:textAlignment="textEnd"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toBottomOf="@id/scroll" />
+
+    <Button
+        android:id="@+id/buttonIn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="ingresar"
+        android:theme="@style/TextInputLayoutRoundedEdges"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toBottomOf="@+id/forget" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toBottomOf="@+id/buttonIn"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/singUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="25dp"
+            android:text="No tiene una cuenta?"
+            frisson:layout_constraintEnd_toEndOf="parent"
+            frisson:layout_constraintStart_toStartOf="parent"
+            frisson:layout_constraintTop_toBottomOf="@+id/buttonIn" />
+
+        <TextView
+            android:id="@+id/create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="25dp"
+            android:textStyle="bold"
+            android:text=" Registrese"
+            frisson:layout_constraintEnd_toEndOf="parent"
+            frisson:layout_constraintStart_toStartOf="parent"
+            frisson:layout_constraintTop_toBottomOf="@+id/buttonIn" />
+
+    </LinearLayout>
 
 
     <ProgressBar

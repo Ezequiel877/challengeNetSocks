@@ -1,120 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:frisson="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.SingInFragment">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <com.intrusoft.library.FrissonView
+        android:id="@+id/wave_head"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:theme="@style/Theme.MaterialComponents.Light"
-        tools:context=".UI.LoginSetup.BlankRegister">
+        android:layout_height="100dp"
+        frisson:alphaValue="50"
+        frisson:gradientType="radial"
+        android:background="@drawable/gradiente"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toTopOf="parent"
+        frisson:tideCount="3"
+        frisson:tideHeight="40dp"
+        frisson:tintColor="#FA382A" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagenconfirme"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/icons_añadir_cámara"
+        android:visibility="visible"
+        frisson:civ_border_color="@color/black"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toTopOf="parent"
+        frisson:layout_constraintBottom_toTopOf="@id/scroll"/>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        frisson:layout_constraintBottom_toTopOf="@+id/buttonIn"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toBottomOf="@+id/imagenconfirme">
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/InPutText_Username"
-                android:layout_width="match_parent"
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:hint="Nombre"
-                android:inputType="textEmailAddress" />
+                android:layout_margin="7dp"
+                android:theme="@style/TextInputLayoutRoundedEdges">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="email o Nro-celular"
+                    android:inputType="textEmailAddress" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/InPutText_email"
-                android:layout_width="match_parent"
-                android:hint="Email o numero-celular"
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="7dp"
+                android:hint="Last name"
+                android:theme="@style/TextInputLayoutRoundedEdges">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:inputType="textEmailAddress" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/data"
-                android:layout_width="match_parent"
-                android:hint="Email o numero-celular"
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
+                android:layout_margin="7dp"
+                android:theme="@style/TextInputLayoutRoundedEdges">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/InPutText_email"
-                android:layout_width="match_parent"
-                android:hint="Email o numero-celular"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="E-mail Address"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="7dp"
+                android:hint="Mobile Number"
+                android:theme="@style/TextInputLayoutRoundedEdges">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:inputType="textEmailAddress" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:passwordToggleEnabled="true" >
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Passwork"
-                android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:hint="Contraseña"
-                android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="7dp"
+                android:hint="Password"
+                android:theme="@style/TextInputLayoutRoundedEdges">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/InPutTextAdress"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="confirme"
-            app:passwordToggleEnabled="true" >
+    </androidx.core.widget.NestedScrollView>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Confirm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/buttonIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ingresar"
+        android:theme="@style/TextInputLayoutRoundedEdges"
+        frisson:layout_constraintBottom_toTopOf="@+id/singUp"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toBottomOf="@+id/lineaCheck"/>
 
-        <Button
-            android:id="@+id/buttonOn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Continuar"/>
-        <ProgressBar
-            android:id="@+id/progresLigt"
+    <LinearLayout
+        android:id="@+id/lineaCheck"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toBottomOf="@+id/scroll">
+
+        <CheckBox
+            android:id="@+id/checkBoxTerms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_gravity="center"/>
+            android:buttonTint="@color/colorPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acepto los términos y condiciones"
+            android:textColor="@android:color/black" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/singUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Or create account using social media"
+        android:theme="@style/TextInputLayoutRoundedEdges"
+        frisson:layout_constraintBottom_toBottomOf="parent"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        android:padding="7dp"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toBottomOf="@+id/lineaCheck" />
+    <LinearLayout
+        android:id="@+id/socialMedia"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+
+        frisson:layout_constraintTop_toBottomOf="@+id/singUp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/tiwwter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/twitter"
+            android:visibility="visible"
+            frisson:civ_border_color="@color/black"
+            frisson:layout_constraintEnd_toEndOf="parent"
+            frisson:layout_constraintStart_toStartOf="parent"
+            frisson:layout_constraintTop_toTopOf="parent"
+            frisson:layout_constraintBottom_toTopOf="@id/scroll"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/google"
+            android:visibility="visible"
+            frisson:civ_border_color="@color/black"
+            frisson:layout_constraintEnd_toEndOf="parent"
+            frisson:layout_constraintStart_toStartOf="parent"
+            frisson:layout_constraintTop_toTopOf="parent"
+            frisson:layout_constraintBottom_toTopOf="@id/scroll"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/facebook"
+            android:visibility="visible"
+            frisson:civ_border_color="@color/black"
+            frisson:layout_constraintEnd_toEndOf="parent"
+            frisson:layout_constraintStart_toStartOf="parent"
+            frisson:layout_constraintTop_toTopOf="parent"
+            frisson:layout_constraintBottom_toTopOf="@id/scroll"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progresRigt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
