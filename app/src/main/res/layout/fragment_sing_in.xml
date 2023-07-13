@@ -59,10 +59,10 @@
                 android:theme="@style/TextInputLayoutRoundedEdges">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputEmail"
+                    android:id="@+id/inputName"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="email o Nro-celular"
+                    android:hint="Firt Name"
                     android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -118,6 +118,17 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/txtFechaNacimiento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:textSize="20dp"
+                android:theme="@style/TextInputLayoutRoundedEdges"
+                android:onClick="mostrarDatePickerDialog"
+                android:text="Seleccionar fecha de nacimiento" />
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="320dp"
@@ -127,7 +138,7 @@
                 android:theme="@style/TextInputLayoutRoundedEdges">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/InPutTextAdress"
+                    android:id="@+id/inputDate"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:inputType="textEmailAddress" />
