@@ -23,13 +23,14 @@ class SingInFragment : Fragment(R.layout.fragment_sing_in) {
     private val viewModel by viewModels<ModelUserViewModel> {
         AuthFactory(SingInImp(UserDataSource()))
     }
-    private lateinit var txtFechaNacimiento: TextView
+
     private var fechaNacimiento: String = ""
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSingInBinding.bind(view)
         getSeting()
+        binding.txtFechaNacimiento.setOnClickListener { view -> mostrarDatePickerDialog(view) }
 
     }
 
@@ -39,13 +40,13 @@ class SingInFragment : Fragment(R.layout.fragment_sing_in) {
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-        val datePickerDialog = DatePickerDialog(requireContext(), { _, year, monthOfYear, dayOfMonth ->
+        val datePickerDialog = DatePickerDialog(requireContext(), { _, mostrarDatePickerDialog, monthOfYear, dayOfMonth ->
             val selectedDate = Calendar.getInstance()
             selectedDate.set(year, monthOfYear, dayOfMonth)
 
             val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
             fechaNacimiento = dateFormat.format(selectedDate.time)
-            txtFechaNacimiento.text = fechaNacimiento
+            binding.txtFechaNacimiento.text = fechaNacimiento
         }, year, month, day)
 
         datePickerDialog.show()

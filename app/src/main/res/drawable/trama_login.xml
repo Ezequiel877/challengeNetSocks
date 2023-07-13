@@ -1,55 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- Trama superior -->
-    <item>
-        <shape>
-            <gradient
-                android:angle="180"
-                android:startColor="#3F51B5"
-                android:endColor="#FF4081"
-                android:type="linear" />
-            <corners
-                android:bottomLeftRadius="80dp"
-                android:bottomRightRadius="80dp" />
-        </shape>
-    </item>
-
-    <!-- Trama inferior -->
-    <item android:top="250dp" android:bottom="0dp">
-        <shape>
-            <gradient
-                android:angle="180"
-                android:startColor="#FF4081"
-                android:endColor="#9DA6DA"
-                android:type="linear" />
-            <corners
-                android:bottomLeftRadius="180dp"
-                android:bottomRightRadius="180dp" />
-        </shape>
-    </item>
-
-    <!-- Ondas de cadena -->
-    <item android:bottom="10dp" android:left="100dp">
-        <rotate
-            android:fromDegrees="180"
-            android:pivotX="30%"
-            android:pivotY="50%">
-
-            <shape>
-                <gradient
-                    android:angle="280"
-                    android:startColor="#FF4081"
-                    android:centerColor="#A6ACCC"
-                    android:endColor="#9DA6DA"
-                    android:type="linear" />
-                <corners
-                    android:topRightRadius="100dp"
-                    android:topLeftRadius="200dp"
-                    android:bottomRightRadius="200dp"
-                    android:bottomLeftRadius="100dp" />
-            </shape>
-        </rotate>
-    </item>
-
-</layer-list>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF" /> <!-- Color de fondo -->
+    <corners  android:radius="30dp"/>
+    <gradient
+        android:startColor="#FF0000"
+    android:endColor="#DC9D31"
+    android:angle="45"
+    android:type="linear"
+    />
+</shape>

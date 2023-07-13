@@ -1,6 +1,7 @@
 package com.example.challengenetsocks.domian
 
 import com.example.challengenetsocks.model.User
+import com.example.challengenetsocks.model.UserAuth
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -13,11 +14,11 @@ class UserDataSource {
         return passWork.user
     }
 
-    suspend fun chetAndRegistro(email: String, password: String, client: String, ): FirebaseUser? {
+    suspend fun chetAndRegistro(email: String, password: String, userAuth: UserAuth ): FirebaseUser? {
         val pass = FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password).await()
         pass.user?.uid?.let {
             FirebaseFirestore.getInstance().collection("user").document(it)
-                .set(User(email, client, " username")).await()
+                .set(User(email, userAuth.date)).await()
         }
         return pass.user
 

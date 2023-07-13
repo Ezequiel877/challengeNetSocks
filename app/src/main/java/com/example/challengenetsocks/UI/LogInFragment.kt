@@ -20,19 +20,13 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
     private val viewModel by viewModels<ModelUserViewModel> {
         AuthFactory(SingInImp(UserDataSource()))
     }
-    private val firebaseAuth by lazy { com.google.firebase.auth.FirebaseAuth.getInstance() }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding= FragmentLogInBinding.bind(view)
-        changeClientes()
+
         bindingCheck()
         goingLoging()
-    }
-
-    private fun changeClientes() {
-        firebaseAuth.currentUser?.let {
-            findNavController().navigate(R.id.logInFragment)
-        }
     }
 
     private fun bindingCheck() {
@@ -45,7 +39,7 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
 
     }
     private fun goingLoging(){
-        binding.singUp.setOnClickListener {
+        binding.buttonIn.setOnClickListener {
             findNavController().navigate(R.id.singInFragment)
 
         }

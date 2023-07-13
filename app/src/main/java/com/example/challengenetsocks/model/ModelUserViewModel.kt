@@ -18,10 +18,10 @@ class ModelUserViewModel(private val loginRepo: Repository) : ViewModel() {
         }
     }
 
-    fun createUser(email: String, password: String) = liveData(Dispatchers.IO) {
+    fun createUser(user:UserAuth) = liveData(Dispatchers.IO) {
         emit(Result.Loading())
         try {
-            emit(Result.Succes(loginRepo.singUp(email, password)))
+            emit(Result.Succes(loginRepo.register(user)))
         } catch (e: Exception) {
             emit(Result.Failure(e))
         }

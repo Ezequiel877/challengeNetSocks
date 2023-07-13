@@ -7,19 +7,14 @@
     android:layout_gravity="center"
     tools:context=".UI.LogInFragment">
 
-    <com.intrusoft.library.FrissonView
-        android:id="@+id/wave_head"
+    <ImageView
+        android:id="@+id/trama"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        frisson:alphaValue="50"
-        frisson:gradientType="radial"
-        android:background="@drawable/gradiente"
+        android:background="@drawable/trama"
         frisson:layout_constraintEnd_toEndOf="parent"
         frisson:layout_constraintStart_toStartOf="parent"
-        frisson:layout_constraintTop_toTopOf="parent"
-        frisson:tideCount="3"
-        frisson:tideHeight="40dp"
-        frisson:tintColor="#FA382A" />
+        frisson:layout_constraintBottom_toTopOf="@id/hi"/>
 
     <TextView
         android:id="@+id/hi"
@@ -30,7 +25,11 @@
         android:textAlignment="textStart"
         android:textSize="70dp"
         android:textStyle="bold"
-        frisson:layout_constraintTop_toBottomOf="@id/wave_head" />
+        frisson:layout_constraintEnd_toEndOf="parent"
+        frisson:layout_constraintStart_toStartOf="parent"
+        frisson:layout_constraintTop_toBottomOf="@+id/trama"
+
+        />
 
     <TextView
         android:id="@+id/desciption"
@@ -60,8 +59,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:theme="@style/TextInputLayoutRoundedEdges">
+            android:padding="16dp">
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -114,12 +112,12 @@
         frisson:layout_constraintStart_toStartOf="parent"
         frisson:layout_constraintTop_toBottomOf="@id/scroll" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonIn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="ingresar"
-        android:theme="@style/TextInputLayoutRoundedEdges"
+        android:background="@drawable/trama_login"
         frisson:layout_constraintEnd_toEndOf="parent"
         frisson:layout_constraintStart_toStartOf="parent"
         frisson:layout_constraintTop_toBottomOf="@+id/forget" />

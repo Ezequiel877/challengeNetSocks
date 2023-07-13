@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".UI.SingInFragment">
 
-    <com.intrusoft.library.FrissonView
-        android:id="@+id/wave_head"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        frisson:alphaValue="50"
-        frisson:gradientType="radial"
-        android:background="@drawable/gradiente"
-        frisson:layout_constraintEnd_toEndOf="parent"
-        frisson:layout_constraintStart_toStartOf="parent"
-        frisson:layout_constraintTop_toTopOf="parent"
-        frisson:tideCount="3"
-        frisson:tideHeight="40dp"
-        frisson:tintColor="#FA382A" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imagenconfirme"
@@ -150,12 +137,12 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingresar"
-        android:theme="@style/TextInputLayoutRoundedEdges"
+        android:background="@drawable/trama_login"
         frisson:layout_constraintBottom_toTopOf="@+id/singUp"
         frisson:layout_constraintEnd_toEndOf="parent"
         frisson:layout_constraintStart_toStartOf="parent"
@@ -191,7 +178,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Or create account using social media"
-        android:theme="@style/TextInputLayoutRoundedEdges"
+
         frisson:layout_constraintBottom_toBottomOf="parent"
         frisson:layout_constraintEnd_toEndOf="parent"
         android:padding="7dp"
